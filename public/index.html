@@ -1,0 +1,80 @@
+ <html>
+	<head>
+	    <link rel="stylesheet" type="text/css" href="./css/style.css">
+	    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+	  	<script src="./lib/jquery.js"></script>
+	  	<script src="./lib/bootstrap.min.js"></script>
+	  	<script type="text/javascript" src="./js/app.js"></script>
+		<script type="text/javascript" src="./js/postFunc.js"></script>
+
+</script>
+	</head>
+	<body style=" background-color: #E0E0E0" >
+	<div class="container" id = "container"  style=" background-color: #E0E0E0 " >
+	<h1 id="heading">API GATEWAY</h1>
+		
+			<p >
+				<label>Upstream URL </label>
+				<input type="url" placeholder= "http://api.com" class="form-control" id="upstream_url" >
+			</p>
+				<input  class="btn btn-primary" type="Button" onclick="addAttributePath()" id="addButton" value="ADD RESOURCE"/>
+				<input  class="btn btn-danger" type="button"  onclick="removeElementPath()" value="DELETE RESOURCE" /> 
+				</br>
+				</br>
+			<!-- This Container is for Path  -->
+			<div id=divOuter_0 style=" background-color: white; " class="rcorners2">
+		
+				<label>RESOURCE </label>
+				<div >
+					<input  type="text" class="form-control" placeholder="/abc" id="pathId_0" >
+				</div>
+			<!-- This container is for roles and methods -->
+						
+				<div class= "row" id="containerRole_0">
+					<div id= "btnUpperDiv_0" data-value="1">
+				     	<div id ="divRolesId_01" class="form-group col-xs-6"> <label> Roles </label>
+							<input class="form-control"  type="text" placeholder="Admin" id="roles_010" />
+						</div>
+				        <div id = "divMethodsId_01" class="form-group col-xs-6"  >
+				        	    <label>Access Methods</label> 
+						      <p>	
+						            <span for="one">GET<input  type="checkbox"  id="checkbox_0100" value="get"/></span>
+						            <span for="two">PUT<input type="checkbox" id="checkbox_0101" value="put" /> </span>
+						            <span for="three">POST<input type="checkbox" id="checkbox_0102" value="post" /></span>
+						            <span for="four">DELETE<input type="checkbox" id="checkbox_0103" value="delete" /></span>
+						         </p>   					    	 		
+						 </div>
+						<div id = "divRateLimitId_01">
+						 	<label>Rate-Limit</label> 
+				        	 <input class="form-control" type="number" placeholder="200 Per Day" type="text" size="35" id="rateLimit_010" > 	
+				        	  	</br>	  
+						 </div>
+					 </div>
+					 </div>	
+					 <input type="Button" onclick="RoleMakerFunc(this)" class=" btn btn-success" id="plusBtnId_01" value="+"/>
+					 <input type="button" onclick="removeRoleFunc(this)" class=" btn btn-danger" id="minusBtnId_01" value="-"/> 
+			</div>
+		</div>				
+		</br>
+		
+	<input type="button" class="btn btn-success" id="register" value="Download" onclick="postRequest()" disabled="disabled"/>
+	
+	<script>
+	var $input = $('input'),	
+    $register = $('#register');    
+	$register.attr('disabled', true);
+		$input.keyup(function() {
+		    var trigger = false;
+		    $input.each(function() {
+		        if (!$(this).val()) {
+		            trigger = true;
+		        }
+		    });
+		    trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+		});
+	</script>
+
+
+
+	</body>
+</html>

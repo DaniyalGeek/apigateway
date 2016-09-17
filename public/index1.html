@@ -1,0 +1,98 @@
+ <html>
+	<head>
+	    <link rel="stylesheet" type="text/css" href="./css/style.css">
+	    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+	  	<script src="./lib/jquery.js"></script>
+	  	<script src="./lib/bootstrap.min.js"></script>
+
+</script>
+	</head>
+	<body>
+	<div class="container">
+	<h1 id="heading">API GATEWAY</h1>
+		<div class="form-group col-xs-6 container"  >
+			
+			<p >
+				<label>Upstream URL </label>
+				<input type="text" class="form-control" id="upstream_url" >
+			</p>
+
+			<!-- This Container is for Path  -->
+
+			<p>
+				<label>Paths  </label>
+				<div id="container">
+					<input type="text" class="form-control" placeholder="/abc" id="pathId_0" >
+				</div>
+				<input type="Button" onclick="addAttributePath()" id="addButton" value="+"/>
+				<input type="button"  onclick="removeElementPath()" value="-" /> 
+				
+			</p>
+
+
+
+			<!-- This container is for roles and methods -->
+				<p >
+				
+				<div class= "row" id="containerRole">
+			     	<div id ="roles" class="form-group col-xs-6"> <label> Roles </label>
+						<input class="form-control" type="text" placeholder="Admin" id="roles_0" />
+					</div>
+			        <div id = "methods" class="form-group col-xs-6"  >
+			        	    <label>Methods</label> 
+					      	<p>
+					            <span for="one">GET<input  type="checkbox"  id="checkbox_00" value="get"/></span>
+					            <span for="two">PUT<input type="checkbox" id="checkbox_01" value="put" /> </span>
+					            <span for="three">POST<input type="checkbox" id="checkbox_02" value="post" /></span>
+					            <span for="four">DELETE<input type="checkbox" id="checkbox_03" value="delete" /></span>
+					            
+					        <p>		
+
+					 </div>
+				</div>
+				<input type="Button" onclick="addAttributeRoles()" id="addButton" value="+"/>
+				<input type="button"  onclick="removeElementRoles()" value="-" /> 
+				
+			</p>
+
+<!-- This container is for Ratelimiting  -->
+				<p>
+				
+				<div class= "row" id="containerRole">
+
+					Rate Limit
+						<input class="form-control" type="text" placeholder="2000 Per Day" id="rate_limit" />
+				
+					
+					
+				</div>
+			
+			</p>
+			<input type="button" value="SUBMIT" onclick="postRequest()"></input>
+		</div>
+		<div class="form-group col-xs-6 ">
+			<h4>UPSTREAM URL</h4>
+			<p>Upstream Url will be your main url for api callings like if you have </p>
+			<label> 1  . Http://www.apiexampe.com/admin</label></br>
+			<label> 2   . Http://www.apiexampe.com/user</label>
+			<p>so in this example upstream url will be look like <b>http://www.apiexample.com</b></p>
+			<h4>PATHS </h4>
+			<p> in upper case Paths will be two you can add by clicking on '+' sign </p>
+			
+			<p> write path  <label> /admin </label> and <label> /user</label> in both fields which yuo add.</p>
+			<h4>ROLES</h4>
+			<p> Roles are the parts who can perform different actions on this APi like we have two roles 1. Admin
+			2. User and we need to assing all the methods to admin and only get method to User so we will check those</p>
+			<h4>RATE LIMIT</h4>
+			<p>Rate limit the the feature that will limit the request for every user, user cannot call the API more then you write limit.</p>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/app.js"></script>
+	<script type="text/javascript" src="./js/postFunc.js"></script>
+
+
+
+	</body>
+</html>

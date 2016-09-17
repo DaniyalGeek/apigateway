@@ -1,0 +1,67 @@
+{
+		"upstream_url":"http://localhost:5000",
+		"path":["/student","/admin"],
+		"levels":[
+					{"role":"admin","methods":["get","post"]},
+					{"role":"user","methods":["get"]}
+
+				],
+		"rate_limit":"5",
+		"jwt":"true"
+
+
+
+}
+
+
+{
+"upstream_url":"http://localhost:5000",
+"levels": [
+		{"path":"/user","roles":[
+			 		{"role":"admin","methods":["get","post","put","delete"]},
+					{"role":"user","methods":["get"]},
+					{"role":"system","methods":["get","int"]}
+					],
+			"rate_limit":"200"
+		},
+		{"path":"/piid","roles":[
+			 		{"role":"admin","methods":["get","post"]},
+					{"role":"user","methods":["get"]},
+					{"role":"guest","methods":["get"]}
+					],
+			"rate_limit":"100"
+		}
+	],
+	"jwt":"enabled"
+}
+
+{
+"upstream_url":"https://eimi.io/apitest.php",
+"levels":[
+	{"rate_limit":"90",
+			"roles":[
+				{"role":"admin","methods":["get","put","post","delete"]},
+				{"role":"user","methods":[]}
+				]
+					,"path":"/abc"
+					},
+	{"rate_limit":"100","roles":[
+						{"role":"paid","methods":["get","post","put"]},
+						{"role":"free","methods":["get"]}
+						],
+						"path":"/xyz"}
+						],
+	"jwt":"true"
+}
+
+
+
+
+
+
+
+
+
+
+
+

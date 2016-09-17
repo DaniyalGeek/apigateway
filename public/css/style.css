@@ -1,0 +1,41 @@
+html {
+    background-color: white;
+}
+input:required ;
+#heading{text-align: center;}
+.mainFrame{border: 2px black solid; width: 700px;}
+.frameWorks{margin-left:3.4em; }
+
+
+    .multiselect {
+        width: 200px;
+    }
+    .selectBox {
+        position: relative;
+    }
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+    .overSelect {
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+    }
+    #checkboxes {
+        display: none;
+        border: 1px #dadada solid;
+    }
+    #checkboxes label {
+        display: block;
+    }
+    #checkboxes label:hover {
+        background-color: #1e90ff;
+    }
+
+.rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: auto;
+    height: auto;
+}
